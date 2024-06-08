@@ -9,6 +9,8 @@ project (compile_flags)
 # Add an executable
 add_executable(cmake_examples_compile_flags main.cpp)
 
+# 当编译cmake_examples_compile_flags目标时，会添加一个名为EX3的预处理器宏定义。
+# 这个定义只对cmake_examples_compile_flags及其直接依赖的目标可见。
 target_compile_definitions(cmake_examples_compile_flags 
     PRIVATE EX3
 )

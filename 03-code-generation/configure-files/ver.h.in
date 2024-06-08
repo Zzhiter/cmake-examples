@@ -3,6 +3,8 @@
 
 // version variable that will be substituted by cmake
 // This shows an example using the $ variable type
+// ver.h.in文件中可以使用${VARIABLE}语法来引用CMake变量。
+// 例如，它可以包含${cf_example_VERSION}来插入项目的版本号。
 const char* ver = "${cf_example_VERSION}";
 
 #endif

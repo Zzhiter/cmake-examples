@@ -37,9 +37,12 @@ target_link_libraries(unit_tests
     Boost::unit_test_framework
 )
 
+# 为unit_tests目标添加编译定义BOOST_TEST_DYN_LINK。这个定义告诉Boost单元测试框架使用动态链接库。
 target_compile_definitions(unit_tests
     PRIVATE
         BOOST_TEST_DYN_LINK
 )
 
+# test_all是在CTest中定义的一个测试用例名称。
+# 通过add_test命令，它与unit_tests可执行文件关联。这意味着当你运行CTest时，可以通过调用test_all来执行unit_tests这个可执行文件，进而运行其中包含的所有单元测试。简而言之，test_all是一个方便的入口，用于启动项目中的全部单元测试。
 add_test(test_all unit_tests)

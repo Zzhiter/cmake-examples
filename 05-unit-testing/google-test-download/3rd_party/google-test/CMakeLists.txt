@@ -1,5 +1,7 @@
 # Download and unpack googletest at configure time
 # See: http://crascit.com/2015/07/25/cmake-gtest/
+# 通过configure_file函数将CMakeLists.txt.in模板文件配置为googletest-download目录下的CMakeLists.txt文件。
+# 在模板文件中，会根据用户设置的下载地址和版本信息，通过file函数下载googletest源码，并使用execute_process函数解压。这样，在执行make命令时，会自动下载并解压googletest库，方便后续的编译和链接操作。
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 # Call CMake to download and Google Test
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .

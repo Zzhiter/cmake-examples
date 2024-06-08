@@ -13,6 +13,8 @@ else()
     message (FATAL_ERROR "Cannot find Protobuf")
 endif()
 
+# The protobuf CMake package includes a number of helper functions to make the code generation easier. 
+# In this example we are generating C++ source and use the following code:
 # Generate the .h and .cxx files
 PROTOBUF_GENERATE_CPP(PROTO_SRCS PROTO_HDRS AddressBook.proto)
 

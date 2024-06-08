@@ -45,9 +45,13 @@ install (TARGETS cmake_examples_inst
     LIBRARY DESTINATION lib)
 
 # Header files
+# 这行命令告诉CMake将${PROJECT_SOURCE_DIR}/include/目录下的所有文件和子目录安装到目标系统的include目录下。
+# ${PROJECT_SOURCE_DIR}是一个CMake变量，代表项目源代码的根目录。这样做的目的是使得在系统中安装项目后，其他项目可以通过标准的#include语句找到并使用这个项目提供的头文件。
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ 
     DESTINATION include)
 
 # Config
+# 这条命令安装单个文件cmake-examples.conf到目标系统的etc目录。在Unix-like系统中，etc目录通常用于存放配置文件。、
+# 这意味着在安装完成后，cmake-examples.conf将作为配置文件可供用户或系统使用。
 install (FILES cmake-examples.conf
     DESTINATION etc)
